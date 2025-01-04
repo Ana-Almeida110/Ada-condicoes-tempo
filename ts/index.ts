@@ -22,7 +22,7 @@ form?.addEventListener('submit', async (event) => { //?-> adiciona se não for n
 
   //fazer uma requisição - pegar a url da api openweatherapi
   //acrescentar o await depois de tornar a callback em assíncrona
-  const resposta = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${localizacao}&appid=32b8823b187195355ef8a09f773d0e74&lang=pt_br&units=metric`) 
+  const resposta = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(localizacao)}&appid=32b8823b187195355ef8a09f773d0e74&lang=pt_br&units=metric`) 
   
   //convertendo a resposta em JSON
   const dados = await resposta.json();
